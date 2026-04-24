@@ -409,3 +409,18 @@ form textarea {
 form textarea {
   width: 320px;
 }
+
+html,
+body {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+.home-page,
+.home-hero {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 160vh !important;
+}
