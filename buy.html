@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy Treasure Tempest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-logo">Treasure Tempest</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="howtoplay.html">How to Play</a>
+    <a href="lore.html">Lore</a>
+    <a href="buy.html">Buy Now</a>
+  </div>
+</nav>
+
+<div class="section">
+
+  <h1 class="main-title">Buy Treasure Tempest</h1>
+
+  <p style="max-width:700px; margin:0 auto; font-size:20px;">
+    Treasure Tempest is currently in limited production.
+    If you want a copy, send a request below and we’ll reach out with details.
+  </p>
+
+  <br><br>
+
+  <!-- FORM (REPLACE YOUR_FORM_ID BELOW) -->
+  <form action="https://formspree.io/f/mqewwobz" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+
+    <input type="email" name="email" placeholder="Your Email" required><br><br>
+
+    <textarea name="message" placeholder="Tell us you want Treasure Tempest!" rows="5" required></textarea><br><br>
+
+    <button type="submit" class="buy-button">Send Request</button>
+
+  </form>
+
+</div>
+
+<!-- COIN EFFECT SCRIPT -->
+<script>
+  const targets = document.querySelectorAll(".nav-logo, nav a");
+  let coinInterval;
+
+  function makeCoin(target) {
+    const coin = document.createElement("span");
+    coin.classList.add("coin");
+    coin.textContent = "●";
+
+    const rect = target.getBoundingClientRect();
+
+    const randomLeft = rect.left + Math.random() * rect.width;
+    coin.style.left = randomLeft + "px";
+    coin.style.top = rect.top - 30 + "px";
+
+    document.body.appendChild(coin);
+
+    setTimeout(() => {
+      coin.remove();
+    }, 1100);
+  }
+
+  targets.forEach(target => {
+    target.addEventListener("mouseenter", () => {
+      coinInterval = setInterval(() => makeCoin(target), 120);
+    });
+
+    target.addEventListener("mouseleave", () => {
+      clearInterval(coinInterval);
+    });
+  });
+</script>
+
+</body>
+</html>

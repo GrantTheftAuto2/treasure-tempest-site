@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treasure Tempest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+<nav>
+  <div class="nav-logo">Treasure Tempest</div>
+  <div>
+    <a href="index.html">Home</a>
+<a href="howtoplay.html">How to Play</a>
+<a href="lore.html">Lore</a>
+<a href="buy.html">Buy Now</a>
+  </div>
+</nav>
+
+<section class="home-hero">
+  <div class="home-content">
+
+    <h1>Embark on an Epic Voyage!</h1>
+
+    <h2>Ahoy, Mateys!</h2>
+
+    <p class="intro-text">
+      Welcome to Treasure Tempest. Set sail into the sea of Goldwreath Waters.
+      Plunder legendary riches or be swallowed by storms, whirlpools, and rival pirates.
+    </p>
+
+    <div class="home-buttons">
+  <a href="howtoplay.html" class="buy-button">Learn the Rules</a>
+  <a href="lore.html" class="buy-button">Read the Lore</a>
+  <a href="buy.html" class="buy-button">Buy Now!</a>
+</div>
+
+  </div>
+
+  <p class="bottom-text">
+    Treasure Tempest is a fast-paced pirate adventure where 3–6 players chase treasure,
+    dodge danger, and decide when to escape before the storm claims everything.
+  </p>
+</section>
+<script>
+  const targets = document.querySelectorAll(".nav-logo, nav a");
+  let coinInterval;
+
+  function makeCoin(target) {
+    const coin = document.createElement("span");
+    coin.classList.add("coin");
+    coin.textContent = "●";
+
+    const rect = target.getBoundingClientRect();
+
+    const randomLeft = rect.left + Math.random() * rect.width;
+    coin.style.left = randomLeft + "px";
+    coin.style.top = rect.top - 30 + "px"; // your chosen height
+
+    document.body.appendChild(coin);
+
+    setTimeout(() => {
+      coin.remove();
+    }, 1100);
+  }
+
+  targets.forEach(target => {
+    target.addEventListener("mouseenter", () => {
+      coinInterval = setInterval(() => makeCoin(target), 120);
+    });
+
+    target.addEventListener("mouseleave", () => {
+      clearInterval(coinInterval);
+    });
+  });
+</script>
+</body>
+</html>
