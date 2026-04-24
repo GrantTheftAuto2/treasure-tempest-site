@@ -296,7 +296,7 @@ nav a {
 
 /* HOME PAGE */
 .home-hero {
-  min-height: 100vh;
+  min-height: 120vh;
   background-image: url("images/background.jpeg");
   background-size: cover;
   background-position: center;
