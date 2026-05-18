@@ -9,11 +9,12 @@
 
 <nav>
   <div class="nav-logo">Treasure Tempest</div>
+
   <div>
     <a href="index.html">Home</a>
-<a href="howtoplay.html">How to Play</a>
-<a href="lore.html">Lore</a>
-<a href="buy.html">Buy Now</a>
+    <a href="howtoplay.html">How to Play</a>
+    <a href="lore.html">Lore</a>
+    <a href="buy.html">Buy Now</a>
   </div>
 </nav>
 
@@ -25,23 +26,19 @@
     <h2>Ahoy, Mateys!</h2>
 
     <p class="intro-text">
-      Welcome to Treasure Tempest. Set sail into the sea of Goldwreath Waters.
-      Plunder legendary riches or be swallowed by storms, whirlpools, and rival pirates.
+      Treasure Tempest is a fast-paced pirate board game where 3–6 players chase treasure,
+      dodge danger, and decide when to escape before the storm claims everything.
     </p>
 
     <div class="home-buttons">
-  <a href="howtoplay.html" class="buy-button">Learn the Rules</a>
-  <a href="lore.html" class="buy-button">Read the Lore</a>
-  <a href="buy.html" class="buy-button">View Purchase Options</a>
-</div>
+      <a href="howtoplay.html" class="buy-button">Learn the Rules</a>
+      <a href="lore.html" class="buy-button">Read the Lore</a>
+      <a href="buy.html" class="buy-button">View Purchase Options</a>
+    </div>
 
   </div>
-
-  <p class="bottom-text">
-    Treasure Tempest is a fast-paced pirate adventure where 3–6 players chase treasure,
-    dodge danger, and decide when to escape before the storm claims everything.
-  </p>
 </section>
+
 <script>
   const targets = document.querySelectorAll(".nav-logo, nav a");
   let coinInterval;
@@ -55,7 +52,7 @@
 
     const randomLeft = rect.left + Math.random() * rect.width;
     coin.style.left = randomLeft + "px";
-    coin.style.top = rect.top - 30 + "px"; // your chosen height
+    coin.style.top = rect.top - 30 + "px";
 
     document.body.appendChild(coin);
 
@@ -74,5 +71,6 @@
     });
   });
 </script>
+
 </body>
 </html>
